@@ -1,0 +1,57 @@
+name: Yocto
+version: 0.1.0
+description: Yocto is a lightweight and hyper-fast theme that is built for professional writers, bloggers and content marketers.
+icon: rebel
+author:
+  name: vrabe
+  email: git@vrabe.tw
+homepage: https://github.com/vrabe/grav-theme-yocto
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/vrabe/grav-theme-yocto/issues
+readme: https://github.com/vrabe/grav-theme-yocto/blob/develop/README.md
+license: GPLv2 or later
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+    description.enabled:
+        type: toggle
+        label: Show description below title
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+    author_display.enabled:
+        type: toggle
+        label: Show author in every posts
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
+    thumbnail.enabled:
+        type: toggle
+        label: Show thumbnail on top of contents if thumbnail exists
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool

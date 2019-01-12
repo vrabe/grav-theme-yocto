@@ -1,0 +1,46 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <header class="page-header">
+        <h1 class="page-title">{{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS"|t }}</h1>
+        <div class="archive-description">
+            <p>
+                {% if query %}
+                    {% set count = search_results ? search_results.count : 0 %}
+                    {% if count is same as( 1 ) %}
+                        {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_SINGULAR"|t(query|e)|raw }}
+                    {% else %}
+                        {{ "PLUGIN_SIMPLESEARCH.SEARCH_RESULTS_SUMMARY_PLURAL"|t(query|e, count)|raw }}
+                    {% endif %}
+                {% endif %}
+            </p>
+        </div>
+    </header>
+
+    {% for page in search_results %}
+        <article class="hentry">
+            {% embed 'partials/post-entry.html.twig' with {'current_page': page} %}
+                {% block entry_header %}
+                    <header class="entry-header">
+                        <h2 class="entry-title">
+                            <a href="{{ page.url }}" rel="bookmark">{{ page.header.title }}</a>
+                        </h2>
+                    </header><!-- .entry-header -->
+                {% endblock %}
+                {% block entry_content %}
+                    {{ page.summary }}
+                    {% if page.summary != page.content %}
+                        <p>
+                            <a href="{{ child.url }}" class="more-link">
+                                {{ 'YOCTO.BLOG_POST.READ_MORE'|t }} <span class="screen-reader-text">{{ child.title }}</span>
+                            </a>
+                        </p>
+                    {% endif %}
+                {% endblock %}
+                {% block entry_footer %}
+                {% endblock %}
+            {% endembed %}
+        </article>
+        <!-- #post-## -->
+    {% endfor %}
+{% endblock %}

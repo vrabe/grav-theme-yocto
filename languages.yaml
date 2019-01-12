@@ -1,0 +1,58 @@
+en:
+    YOCTO:
+        ACCESSIBILITY:
+            PRE_HEADING: Skip to content
+            PRIMARY_MENU: Primary Menu
+            CATEGORIES: "Categories:"
+            TAGS: "Tags:"
+            POST_NAV: Post navigation
+            PREVIOUS_POST: "Previous post:"
+            NEXT_POST: "Next post:"
+            POST_NAV: Posts navigation
+            PAGE: Page
+            SIDEBAR: Blog Sidebar
+            SKIP_TO_FOOTER: Skip to footer
+            SEARCH: "Search for:"
+        MOBILE:
+            MENU: Menu
+        BLOG_POST:
+            POST_ON: Posted on
+            POST_BY: by
+            PREVIOUS_POST: Previous
+            NEXT_POST: Next
+            PREVIOUS_PAGE: Previous page
+            NEXT_PAGE: Next page
+            READ_MORE: Read more
+        SEARCH:
+            SEARCH: Search
+        RECENT_POSTS:
+            RECENT_POSTS: Recent Posts
+zh-TW:
+    YOCTO:
+        ACCESSIBILITY:
+            PRE_HEADING: Skip to content
+            PRIMARY_MENU: 主選單
+            CATEGORIES: "分類:"
+            TAGS: "Tags:"
+            POST_NAV: Post navigation
+            PREVIOUS_POST: "上一篇:"
+            NEXT_POST: "下一篇:"
+            POST_NAV: Posts navigation
+            PAGE: Page
+            SIDEBAR: Blog Sidebar
+            SKIP_TO_FOOTER: Skip to footer
+            SEARCH: "Search for:"
+        MOBILE:
+            MENU: Menu
+        BLOG_POST:
+            POST_ON: 發表於
+            POST_BY: 由
+            PREVIOUS_POST: 上一篇
+            NEXT_POST: 下一篇
+            PREVIOUS_PAGE: 上一頁
+            NEXT_PAGE: 下一頁
+            READ_MORE: 繼續閱讀...
+        SEARCH:
+            SEARCH: 搜尋
+        RECENT_POSTS:
+            RECENT_POSTS: 近期文章

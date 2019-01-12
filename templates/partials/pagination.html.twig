@@ -1,0 +1,33 @@
+{% set pagination = pagination|default(page.collection.params.pagination) %}
+{% set base_url = base_url|default(page.url) %}
+
+{% if pagination|length > 1 %}
+
+<nav class="navigation pagination" role="navigation">
+    <h2 class="screen-reader-text">{{ 'YOCTO.ACCESSIBILITY.POST_NAV'|t }}</h2>
+    <div class="nav-links">
+        {% if pagination.hasPrev %}
+            {% set url =  (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
+            <a class="prev page-numbers" href="{{ url }}"><span class="screen-reader-text">{{ 'YOCTO.BLOG_POST.PREVIOUS_PAGE'|t }}</span>&lt;</a>
+        {% endif %}
+
+        {% for paginate in pagination %}
+
+            {% if paginate.isCurrent %}
+                <span aria-current="page" class="page-numbers current"><span class="meta-nav screen-reader-text">{{ 'YOCTO.ACCESSIBILITY.PAGE'|t }}</span>{{ paginate.number }}</span>
+            {% elseif paginate.isInDelta %}
+                {% set url = (base_url ~ pagination.params ~ paginate.url)|replace({'//':'/'}) %}
+                <a class="page-numbers" href="{{ url }}"><span class="meta-nav screen-reader-text">{{ 'YOCTO.ACCESSIBILITY.PAGE'|t }}</span>{{ paginate.number }}</a>
+            {% elseif paginate.isDeltaBorder %}
+                <span class="page-numbers dots">&hellip;</span>
+            {% endif %}
+
+        {% endfor %}
+        {% if pagination.hasNext %}
+            {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
+            <a class="next page-numbers" href="{{ url }}"><span class="screen-reader-text">{{ 'YOCTO.BLOG_POST.NEXT_PAGE'|t }}</span>&gt;</a>
+        {% endif %}
+    </div>
+</nav>
+
+{% endif %}

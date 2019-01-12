@@ -1,0 +1,109 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}" class="no-js">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    {% block stylesheets %}
+        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 100) %}
+        {% do assets.addCss('theme://css/style.css', 99) %}
+        {% do assets.addCss('theme://css/patch.css', 98) %}
+        {% do assets.addCss('theme://css/custom.css', 97) %}
+    {% endblock %}
+    {{ assets.css() }}
+
+    {% block javascripts %}
+        {% do assets.addJs('theme://js/javascript-detect.js', 100) %}
+        {% do assets.addJs('theme://js/bundle.js', {'priority':99, 'group':'bottom'}) %}
+    {% endblock %}
+    {{ assets.js() }}
+
+{% endblock head%}
+</head>
+<body class="{{ page.header.body_classes }}">
+    <a class="screen-reader-text" href="#content">{{ 'YOCTO.ACCESSIBILITY.PRE_HEADING'|t }}</a>
+
+{% block header %}
+    <header class="site-header" role="banner">
+        <div class="container site-header-container">
+			<div class="site-branding">
+                {# TODO: Display the logo #}
+
+        		{# Site Title. #}
+                {% if page.home %}
+        			<h1 class="site-title">
+        				<a href="{{ base_url == '' ? '/' : base_url }}" rel="home">
+        					{{ config.site.title }}
+        				</a>
+        			</h1>
+        		{% else %}
+        			<p class="site-title">
+        				<a href="{{ base_url == '' ? '/' : base_url }}" rel="home">
+        					{{ config.site.title }}
+        				</a>
+        			</p>
+        		{% endif %}
+
+                {# Site Tagline. #}
+        		{% if theme_config.description.enabled %}
+        			<p class="site-description">{{ config.site.metadata.description }}</p>
+        		{% endif %}
+			</div>
+            {% block header_navigation %}
+            <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="{{ 'YOCTO.ACCESSIBILITY.PRIMARY_MENU'|t }}">
+        		<button id="js-menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+    				<i class="fa fa-bars icon icon-bars"></i>
+                    <i class="fa fa-close icon icon-close"></i>
+                    {{ 'YOCTO.MOBILE.MENU'|t }}
+        		</button>
+                {% include 'partials/navigation.html.twig' %}
+            </nav>
+            {% endblock %}
+		</div>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <div class="site-content container" id="content">
+        <main class="site-main" role="main">
+            {% block content %}{% endblock %}
+        </main>
+        {% include 'partials/sidebar.html.twig' %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="site-footer" id="site-footer" role="contentinfo">
+
+        {% include 'partials/footer.html.twig' %}
+
+        <div class="site-info">
+            <span class="powered-by">
+                <a href="http://getgrav.org">
+                    Proudly powered by Grav
+                </a>
+            </span>
+            <span class="sep"> | </span>
+            <span class="site-designer">
+                Theme: Yocto by <a href="https://humblethemes.com/">Humble Themes</a>
+            </span>
+        </div><!-- .site-info -->
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom') }}
+{% endblock %}
+
+</body>
+</html>

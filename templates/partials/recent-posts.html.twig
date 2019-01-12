@@ -1,0 +1,9 @@
+<ul>
+    {% for post in recent_posts %}
+        <li>
+            <a title="{{ post.title }}" href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
