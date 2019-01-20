@@ -2,3 +2,19 @@
     margin-bottom: 18px;
     margin-right: 18px;
 }
+
+.notices.yellow a {
+    color: #df8a13;
+}
+
+.notices.red a {
+    color: #b52b27;
+}
+
+.notices.blue a {
+    color: #28a1c5;
+}
+
+.notices.green a {
+    color: #3d8b3d;
+}
