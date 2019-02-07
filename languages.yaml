@@ -27,6 +27,8 @@ en:
             SEARCH: Search
         RECENT_POSTS:
             RECENT_POSTS: Recent Posts
+        ARCHIVES:
+            ARCHIVES: Archives
 zh-TW:
     YOCTO:
         ACCESSIBILITY:
@@ -56,3 +58,5 @@ zh-TW:
             SEARCH: 搜尋
         RECENT_POSTS:
             RECENT_POSTS: 近期文章
+        ARCHIVES:
+            ARCHIVES: 彙整

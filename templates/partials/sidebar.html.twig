@@ -14,4 +14,11 @@
         </section>
     {% endif %}
 
+	{% if config.plugins.archives.enabled %}
+        <section class="widget widget_archive">
+			<h2 class="widget-title">{{ 'YOCTO.ARCHIVES.ARCHIVES'|t }}</h2>
+            {% include 'partials/archives.html.twig' %}
+        </section>
+    {% endif %}
+
 </aside><!-- .widget-area -->
