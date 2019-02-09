@@ -6,7 +6,7 @@ author:
   name: vrabe
   email: git@vrabe.tw
 homepage: https://github.com/vrabe/grav-theme-yocto
-demo: http://demo.yoursite.com
+#demo: http://demo.yoursite.com
 keywords: grav, theme, etc
 bugs: https://github.com/vrabe/grav-theme-yocto/issues
 readme: https://github.com/vrabe/grav-theme-yocto/blob/develop/README.md
@@ -17,7 +17,7 @@ form:
   fields:
     dropdown.enabled:
         type: toggle
-        label: Dropdown in Menu
+        label: YOCTO.SETTING.DROPDOWN
         highlight: 1
         default: 1
         options:
@@ -27,7 +27,7 @@ form:
           type: bool
     description.enabled:
         type: toggle
-        label: Show description below title
+        label: YOCTO.SETTING.DESCRIPTION
         highlight: 1
         default: 1
         options:
@@ -37,7 +37,7 @@ form:
           type: bool
     author_display.enabled:
         type: toggle
-        label: Show author in every posts
+        label: YOCTO.SETTING.AUTHOR_DISPLAY
         highlight: 1
         default: 1
         options:
@@ -47,7 +47,7 @@ form:
           type: bool
     thumbnail.enabled:
         type: toggle
-        label: Show thumbnail on top of contents if thumbnail exists
+        label: YOCTO.SETTING.THUMBNAIL
         highlight: 1
         default: 1
         options:

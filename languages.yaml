@@ -29,6 +29,11 @@ en:
             RECENT_POSTS: Recent Posts
         ARCHIVES:
             ARCHIVES: Archives
+        SETTING:
+            DROPDOWN: Dropdown in Menu
+            DESCRIPTION: Show description below the site title
+            AUTHOR_DISPLAY: Show author in every posts
+            THUMBNAIL: Show thumbnail on top of contents if thumbnail exists
 zh-TW:
     YOCTO:
         ACCESSIBILITY:
@@ -60,3 +65,8 @@ zh-TW:
             RECENT_POSTS: 近期文章
         ARCHIVES:
             ARCHIVES: 彙整
+        SETTING:
+            DROPDOWN: 是否顯示下拉式選單？
+            DESCRIPTION: 在網站標題下面顯示網站描述
+            AUTHOR_DISPLAY: 在文章中顯示作者
+            THUMBNAIL: 在文章內容上方顯示縮圖
