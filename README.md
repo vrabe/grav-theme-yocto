@@ -30,7 +30,7 @@ You should now have all the theme files under
 
 The [admin plugin](https://github.com/getgrav/grav-plugin-admin) provides an easy-to-use web-based user interface to install this theme.
 
-Before installing this theme, you must follow the steps to allow installing packages outside the official GPM (Grav Package Manager).
+Before installing this theme, you must follow the steps to allow installing packages without the official GPM (Grav Package Manager).
 
 #### With Admin Panel
 * Navigate to **Configuration** page from the sidebar.
@@ -76,4 +76,4 @@ Manually updating Yocto is pretty simple. Here is what you will need to do to ge
 
 ## Manual Update via Admin Panel
 
-Manually updating Yocto via Admin Panel is also pretty simple. Just follow steps listed in [Manual Installation via Admin Panel](#manual_installation_via_admin_panel).
+Manually updating Yocto via Admin Panel is also pretty simple. Just follow steps listed in [Manual Installation via Admin Panel](#manual-installation-via-admin-panel).
