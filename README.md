@@ -4,6 +4,13 @@ Yocto is a lightweight and hyper-fast Grav theme that is built for professional 
 
 Yocto is a Grav conversion of [the Wordpress theme of the same name](https://humblethemes.com/themes/yocto).
 
+# Supported Plugins
+
+* Archives
+* Pagination
+* Recent Posts
+* SimpleSearch
+
 # Installation
 
 Installing the Yocto theme can be done in one of two ways. <!--Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.-->
@@ -30,7 +37,7 @@ You should now have all the theme files under
 
 The [admin plugin](https://github.com/getgrav/grav-plugin-admin) provides an easy-to-use web-based user interface to install this theme.
 
-Before installing this theme, you must follow the steps to allow installing packages without the official GPM (Grav Package Manager).
+Before installing this theme, you must allow installing packages without the official GPM (Grav Package Manager).
 
 #### With Admin Panel
 * Navigate to **Configuration** page from the sidebar.
