@@ -1,0 +1,38 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = page.collection() %}
+{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+
+{% block content %}
+    {% for child in collection %}
+        <article class="hentry">
+            {% embed 'partials/post-entry.html.twig' with {'current_page': child} %}
+                {% block entry_header %}
+                    <header class="entry-header">
+                        <h2 class="entry-title">
+                            <a href="{{ child.url }}" rel="bookmark">{{ child.header.title }}</a>
+                        </h2>
+                    </header><!-- .entry-header -->
+                {% endblock %}
+                {% block entry_content %}
+                    {{ child.summary }}
+                    {% if child.summary != child.content %}
+                        <p>
+                            <a href="{{ child.url }}" class="more-link">
+                                {{ 'YOCTO.BLOG_POST.READ_MORE'|t }} <span class="screen-reader-text">{{ child.title }}</span>
+                            </a>
+                        </p>
+                    {% endif %}
+                {% endblock %}
+                {% block entry_footer %}
+                {% endblock %}
+            {% endembed %}
+        </article>
+        <!-- #post-## -->
+    {% endfor %}
+
+    {# Render the pagination list #}
+    {% if show_pagination and config.plugins.pagination.enabled and collection.params.pagination %}
+        {% include 'partials/pagination.html.twig' with {'base_url':page.url, 'pagination':collection.params.pagination} %}
+    {% endif %}
+{% endblock %}

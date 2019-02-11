@@ -1,0 +1,24 @@
+<aside class="widget-area" role="complementary" aria-label="{{ 'YOCTO.ACCESSIBILITY.SIDEBAR'|t }}">
+	<a class="screen-reader-text" href="#site-footer">{{ 'YOCTO.ACCESSIBILITY.SKIP_TO_FOOTER'|t }}</a>
+
+    {% if config.plugins.simplesearch.enabled %}
+        <section class="widget widget_search">
+            {% include 'partials/simplesearch_searchbox.html.twig' %}
+        </section>
+    {% endif %}
+
+    {% if attribute(config.plugins, 'recent-posts').enabled %}
+        <section class="widget widget_recent_entries">
+            <h2 class="widget-title">{{ 'YOCTO.RECENT_POSTS.RECENT_POSTS'|t }}</h2>
+            {% include 'partials/recent-posts.html.twig' %}
+        </section>
+    {% endif %}
+
+	{% if config.plugins.archives.enabled %}
+        <section class="widget widget_archive">
+			<h2 class="widget-title">{{ 'YOCTO.ARCHIVES.ARCHIVES'|t }}</h2>
+            {% include 'partials/archives.html.twig' %}
+        </section>
+    {% endif %}
+
+</aside><!-- .widget-area -->

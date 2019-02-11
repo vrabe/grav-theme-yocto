@@ -1,0 +1,9 @@
+enabled: true
+dropdown:
+  enabled: false
+description:
+    enabled: false
+author_display:
+    enabled: false
+thumbnail:
+    enabled: false

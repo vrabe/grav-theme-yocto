@@ -1,0 +1,75 @@
+{% set dateformat = admin.page.dateformat ?: config.system.pages.dateformat.short ?: "F d, Y" %}
+
+{% block entry_header %}
+{% endblock %}
+
+<div class="entry-content">
+    {% if current_page.template == "item" %}
+        <div class="entry-meta">
+            <span class="posted-on"> {{ 'YOCTO.BLOG_POST.POST_ON'|t }}
+                <a href="{{ current_page.permalink }}" rel="bookmark">
+                {% if current_page.date == current_page.modified %}
+                    <time class="entry-date published updated" datetime="{{ current_page.date|date("c") }}"> {{ current_page.date|date(dateformat) }} </time>
+                {% else %}
+                    <time class="entry-date published" datetime="{{ current_page.date|date("c") }}"> {{ current_page.date|date(dateformat) }} </time>
+                    <time class="entry-date updated" datetime="{{ current_page.modified|date("c") }}"> {{ current_page.modified|date(dateformat) }} </time>
+                {% endif %}
+                </a>
+            </span>
+            {% if theme_config.author_display.enabled %}
+                <span class="byline"> {{ 'YOCTO.BLOG_POST.POST_BY'|t }}
+                    {% if current_page.taxonomy.author is defined %}
+                        <span class="author vcard"><a class="url fn n" href="{{ base_url }}/author:{{ current_page.taxonomy.author }}">{{ current_page.taxonomy.author }}</a></span>
+                    {% else %}
+                        <span class="author vcard">{{ current_page.header.author ?: config.site.author.name }}</span>
+                    {% endif %}
+                </span>
+            {% endif %}
+        </div><!-- .entry-meta -->
+    {% endif %}
+
+    {% if theme_config.thumbnail.enabled %}
+        <div class="post-thumbnail">
+            {% set image = current_page.header.thumbnail_media ? current_page.find('/images').media[current_page.header.thumbnail_media] : current_page.media.images|first %}
+            {{ image.cropZoom(760, 380).html('', '', 'attachment-post-thumbnail wp-post-image') }}
+        </div>
+    {% endif %}
+
+    {% block entry_content %}
+    {% endblock %}
+
+</div><!-- .entry-content -->
+
+
+{% block entry_footer %}
+    <footer class="entry-footer">
+    {% set categories = page.taxonomy.category %}
+    {% if categories > 0 %}
+        <div class="entry-terms-wrapper entry-categories-wrapper">
+        <span class="screen-reader-text">{{ 'YOCTO.ACCESSIBILITY.CATEGORIES'|t }}</span>
+        <span class="icon-wrapper"><i class="fa fa-folder-open icon icon-folder-open"></i></span>
+        <span class="entry-terms category">
+            {% for category in categories %}
+                <a href="{{ base_url }}/category{{ config.system.param_sep }}{{ category }}" rel="tag">{{ category }}</a>
+                {% if not loop.last %}
+                    <span class="screen-reader-text">, </span>
+                {% endif %}
+            {% endfor %}
+        </span>
+    {% endif %}
+    {% set tags = page.taxonomy.tag %}
+    {% if tags > 0 %}
+        <div class="entry-terms-wrapper entry-tags-wrapper">
+        <span class="screen-reader-text">{{ 'YOCTO.ACCESSIBILITY.TAGS'|t }}</span>
+        <span class="icon-wrapper"><i class="fa fa-hashtag icon icon-hashtag"></i></span>
+        <span class="entry-terms tag">
+            {% for tag in tags %}
+                <a href="{{ base_url }}/tag{{ config.system.param_sep }}{{ tag }}" rel="tag">{{ tag }}</a>
+                {% if not loop.last %}
+                    <span class="screen-reader-text">, </span>
+                {% endif %}
+            {% endfor %}
+        </span>
+    {% endif %}
+    </footer><!-- .entry-footer -->
+{% endblock %}

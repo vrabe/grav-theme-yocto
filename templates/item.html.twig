@@ -1,0 +1,22 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <article class="hentry">
+        {% embed 'partials/post-entry.html.twig' with {'current_page': page} %}
+            {% block entry_header %}
+                {% if not current_page.home %}
+                    <header class="entry-header">
+                        <h1 class="entry-title">{{ page.header.title }}</h1>
+                    </header><!-- .entry-header -->
+                {% endif %}
+            {% endblock %}
+            {% block entry_content %}
+                {{ page.content }}
+            {% endblock %}
+        {% endembed %}
+    </article>
+    <!-- #post-## -->
+
+    {% include 'partials/post-navigation.html.twig' %}
+
+{% endblock %}

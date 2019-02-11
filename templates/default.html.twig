@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <article>
+        {% if not page.home %}
+            <header class="entry-header">
+                <h1 class="entry-title">{{ page.header.title }}</h1>
+            </header><!-- .entry-header -->
+        {% endif %}
+
+        <div class="entry-content">
+            {{ page.content }}
+        </div><!-- .entry-content -->
+    </article>
+{% endblock %}
