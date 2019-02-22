@@ -1,3 +1,4 @@
+/* For markdown-notices */
 .notices p {
     margin-bottom: 18px;
     margin-right: 18px;
@@ -17,4 +18,18 @@
 
 .notices.green a {
     color: #3d8b3d;
+}
+
+/* For highlight */
+.hljs tr {
+    border: 0;
+}
+
+code.hljs {
+    padding: 0;
+    margin: -1.2rem;
+}
+
+table.hljs-ln {
+    margin: 0;
 }
