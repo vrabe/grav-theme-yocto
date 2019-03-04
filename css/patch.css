@@ -21,6 +21,10 @@
 }
 
 /* For highlight */
+.hljs table {
+    width: auto;
+}
+
 .hljs tr {
     border: 0;
 }
