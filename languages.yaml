@@ -29,6 +29,8 @@ en:
             RECENT_POSTS: Recent Posts
         ARCHIVES:
             ARCHIVES: Archives
+        CATEGORIES:
+            CATEGORIES: Categories
         SETTING:
             DROPDOWN: Dropdown in Menu
             DESCRIPTION: Show description below the site title
@@ -65,6 +67,8 @@ zh-TW:
             RECENT_POSTS: 近期文章
         ARCHIVES:
             ARCHIVES: 彙整
+        CATEGORIES:
+            CATEGORIES: 分類
         SETTING:
             DROPDOWN: 顯示下拉式選單
             DESCRIPTION: 在網站標題下面顯示網站描述
