@@ -7,3 +7,6 @@ author_display:
     enabled: false
 thumbnail:
     enabled: false
+archives_date_override:
+    enabled: false
+    display_format: 'M Y'

@@ -36,6 +36,9 @@ en:
             DESCRIPTION: Show description below the site title
             AUTHOR_DISPLAY: Show author in every posts
             THUMBNAIL: Show thumbnail on top of contents if thumbnail exists
+            SETTING.ARCHIVES_DATE_OVERRIDE:
+                ENABLED: Override date format setting in Archives plugin
+                DISPLAY_FORMAT: Date format
 zh-TW:
     YOCTO:
         ACCESSIBILITY:
@@ -74,3 +77,6 @@ zh-TW:
             DESCRIPTION: 在網站標題下面顯示網站描述
             AUTHOR_DISPLAY: 在文章中顯示作者
             THUMBNAIL: 在文章內容上方顯示縮圖
+            ARCHIVES_DATE_OVERRIDE:
+                ENABLED: 覆寫 Archives 外掛的時間格式設定
+                DISPLAY_FORMAT: 時間格式
