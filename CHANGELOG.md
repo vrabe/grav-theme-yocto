@@ -12,3 +12,9 @@
     * Sidebar is hidden in maintenance mode
 2. [](#bugfix)
      * Language attribute in `html` tag does't show correctly
+
+# v0.3
+##  07/19/2019
+
+1. [](#new)
+    * Primary color can be changed

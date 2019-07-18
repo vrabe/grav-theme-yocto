@@ -10,3 +10,5 @@ thumbnail:
 archives_date_override:
     enabled: false
     display_format: 'M Y'
+primary_color: '#ffcd00'
+regenerate_css: true

@@ -39,6 +39,8 @@ en:
             SETTING.ARCHIVES_DATE_OVERRIDE:
                 ENABLED: Override date format setting in Archives plugin
                 DISPLAY_FORMAT: Date format
+            PRIMARY_COLOR: Primary color
+            REGENERATE_CSS: Regenerate CSS about primary color
 zh-TW:
     YOCTO:
         ACCESSIBILITY:
@@ -80,3 +82,5 @@ zh-TW:
             ARCHIVES_DATE_OVERRIDE:
                 ENABLED: 覆寫 Archives 外掛的時間格式設定
                 DISPLAY_FORMAT: 時間格式
+            PRIMARY_COLOR: 主顏色
+            REGENERATE_CSS: 重新生成關於主顏色的 CSS
