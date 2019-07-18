@@ -18,3 +18,8 @@
 
 1. [](#new)
     * Primary color can be changed
+    * Add support for taxonomylist
+2. [](#improved)
+    * Add the option to override date format in Archives plugin
+3. [](#bugfix)
+    * Use minified assets (js and css)
