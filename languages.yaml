@@ -29,11 +29,18 @@ en:
             RECENT_POSTS: Recent Posts
         ARCHIVES:
             ARCHIVES: Archives
+        CATEGORIES:
+            CATEGORIES: Categories
         SETTING:
             DROPDOWN: Dropdown in Menu
             DESCRIPTION: Show description below the site title
             AUTHOR_DISPLAY: Show author in every posts
             THUMBNAIL: Show thumbnail on top of contents if thumbnail exists
+            SETTING.ARCHIVES_DATE_OVERRIDE:
+                ENABLED: Override date format setting in Archives plugin
+                DISPLAY_FORMAT: Date format
+            PRIMARY_COLOR: Primary color
+            REGENERATE_CSS: Regenerate CSS about primary color
 zh-TW:
     YOCTO:
         ACCESSIBILITY:
@@ -65,8 +72,15 @@ zh-TW:
             RECENT_POSTS: 近期文章
         ARCHIVES:
             ARCHIVES: 彙整
+        CATEGORIES:
+            CATEGORIES: 分類
         SETTING:
             DROPDOWN: 顯示下拉式選單
             DESCRIPTION: 在網站標題下面顯示網站描述
             AUTHOR_DISPLAY: 在文章中顯示作者
             THUMBNAIL: 在文章內容上方顯示縮圖
+            ARCHIVES_DATE_OVERRIDE:
+                ENABLED: 覆寫 Archives 外掛的時間格式設定
+                DISPLAY_FORMAT: 時間格式
+            PRIMARY_COLOR: 主顏色
+            REGENERATE_CSS: 重新生成關於主顏色的 CSS

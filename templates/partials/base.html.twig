@@ -16,15 +16,16 @@
 
     {% block stylesheets %}
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 100) %}
-        {% do assets.addCss('theme://css/style.css', 99) %}
-        {% do assets.addCss('theme://css/patch.css', 98) %}
-        {% do assets.addCss('theme://css/custom.css', 97) %}
+        {% do assets.addCss('theme://css/style.min.css', 99) %}
+        {% do assets.addCss('theme://css/color.css', 98) %}
+        {% do assets.addCss('theme://css/patch.css', 97) %}
+        {% do assets.addCss('theme://css/custom.css', 96) %}
     {% endblock %}
     {{ assets.css() }}
 
     {% block javascripts %}
         {% do assets.addJs('theme://js/javascript-detect.js', 100) %}
-        {% do assets.addJs('theme://js/bundle.js', {'priority':99, 'group':'bottom'}) %}
+        {% do assets.addJs('theme://js/bundle.min.js', {'priority':99, 'group':'bottom'}) %}
     {% endblock %}
     {{ assets.js() }}
 
